@@ -34,9 +34,9 @@ USE testdatabase;
 -- SELECT * FROM employees WHERE position = 'Quality Assurance';
 
 # Backend 연봉 인상
--- UPDATE employees 
--- SET salary = salary * 1.05 
--- WHERE position = 'Backend';
+UPDATE employees 
+SET salary = salary * 1.05 
+WHERE position = 'Backend';
 
 # 민혁 데이터 삭제
 -- DELETE FROM employees 
