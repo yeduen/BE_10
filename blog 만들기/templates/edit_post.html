@@ -1,0 +1,6 @@
+<h1>글 수정</h1>
+<form method="POST" action="{{ url_for('update_post', id=post[0]) }}">
+    제목: <input type="text" name="title" value="{{ post[2] }}"><br>
+    내용: <textarea name="content">{{ post[3] }}</textarea><br>
+    <button type="submit">수정</button>
+</form>

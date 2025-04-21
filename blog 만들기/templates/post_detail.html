@@ -1,0 +1,8 @@
+<h2>{{ post[1] }}</h2>
+<p>{{ post[2] }}</p>
+<p>작성일: {{ post[3] }}</p>
+<a href="{{ url_for('update_post', id=post[0]) }}">수정</a>
+<form method="POST" action="{{ url_for('delete_post', id=post[0]) }}">
+    <button type="submit">삭제</button>
+</form>
+<a href="{{ url_for('get_posts') }}">목록으로</a>

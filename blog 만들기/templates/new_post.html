@@ -1,0 +1,6 @@
+<h1>새 글 작성</h1>
+<form method="POST" action="{{ url_for('create_post') }}">
+    제목: <input type="text" name="title"><br>
+    내용: <textarea name="content"></textarea><br>
+    <button type="submit">작성</button>
+</form>

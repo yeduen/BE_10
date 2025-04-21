@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>함수</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        createParagraph()
+        createParagraph()
+        createParagraph()
+        createParagraph()
+        createParagraph()
+
+
+
+        function createParagraph(){
+            const p = document.createElement("p")
+            p.textContent = "새롭게 만들어진 문단 태크^^!"
+            document.querySelector("#container").append(p)
+        }
+
+
+        function sayYes(){
+            console.log(1)
+            console.log(2)
+            alert("yes!")
+        }
+      
+        const sayNo = function(){
+            alert("no!")
+            console.log(3)
+        }
+    
+    </script>
+</body>

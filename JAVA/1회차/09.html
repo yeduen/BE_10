@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta name="'viewport" content="with-device-width, initail-scale=1">
+        <title>DOM </title>
+    </head>
+    <body>
+        <p>대한민국의 역습</p>
+        <p class="comment">손흥민 패스
+        </p>
+        <p class="comment" id="goal">조규성 골
+        </p>
+
+        <script>
+            const p1 = document.querySelector("p")
+            const p2 = document.querySelector(".comment")
+            const p3 = document.querySelector("#goal")
+
+            console.log(p1.textContent)
+            console.log(p2.textContent)
+            console.log(p3.textContent)
+
+            p1.textContent = "우루과이의 역습"
+            p2.textContent = "수아레즈의 멋진 패스"
+            p3.textContent = "포를란의 슛 ~ 골~"
+
+        </script>
+        
+    </body>
+</html>

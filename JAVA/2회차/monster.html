@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>monster</title>
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    let monsterHP = 100;
+    const container = document.getElementById("container");
+    const h1 = document.createElement("h1");
+    h1.textContent = "몬스터잡기 게임 시작한다?";
+    container.appendChild(h1);
+
+    let attackDamage = parseInt(prompt("1회 공격시 데미지?(양의정수)"));
+    let attackCount = 0;
+
+    if (attackDamage > 0 && Number.isInteger(attackDamage)) {
+      let lastStrong; // 마지막 strong 요소 저장용
+
+      while (monsterHP > 0) {
+        monsterHP -= attackDamage;
+        attackCount += 1;
+
+        const p = document.createElement("p");
+        p.textContent = `몬스터를 ${attackCount}회 공격했다`;
+        container.append(p);
+
+        const strong = document.createElement("strong");
+        const remainingHP = monsterHP < 0 ? 0 : monsterHP;
+        strong.textContent = `몬스터의 남은 HP는 ${remainingHP}입니다!`;
+        container.append(strong);
+
+        lastStrong = strong;
+      }
+
+      const h2 = document.createElement("h2");
+      h2.textContent = "몬스터가 죽었다!";
+      h2.style.color = "orange";
+      h2.title = "게임을 다시 시작하고 싶으면 새로고침해라 ㅋ";
+      container.appendChild(h2);
+
+      const retryBtn = document.createElement("button");
+      retryBtn.textContent = "다시 시작";
+      retryBtn.onclick = () => location.reload();
+      container.appendChild(retryBtn);
+    } else {
+      alert("데미지를 잘못 입력하여 게임 취소한다?");
+    }
+  </script>
+</body>
+</html>
