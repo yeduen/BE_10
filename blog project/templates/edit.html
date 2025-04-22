@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 수정</title>
+</head>
+<body>
+    <h1>게시글 수정</h1>
+    <a href="{{ url_for('posts.get_post', id=post.id) }}">← 게시글로 돌아가기</a>
+
+    <form action="{{ url_for('posts.edit_post', id=post.id) }}" method="POST">
+        <p>
+            <label for="title">제목:</label><br>
+            <input type="text" id="title" name="title" value="{{ post.title }}" required>
+        </p>
+        <p>
+            <label for="content">내용:</label><br>
+            <textarea id="content" name="content" rows="8" required>{{ post.content }}</textarea>
+        </p>
+        <button type="submit">수정 완료</button>
+    </form>
+</body>
+</html>

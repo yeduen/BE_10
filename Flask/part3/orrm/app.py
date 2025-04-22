@@ -2,14 +2,14 @@ from flask import Flask, render_template
 from flask_smorest import Api
 from db import db  # db.py에 db = SQLAlchemy() 있어야 함
 from models import User, Board 
-
+from flask_migrate import Migrate
 app = Flask(__name__)
 
 # 데이터베이스 설정
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:2925@localhost/orrm'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)  # ✅ 오타 수정
-
+migrate = Migrate(app, db)
 # API 설정
 app.config["API_TITLE"] = "My API"
 app.config["API_VERSION"] = "v1"
